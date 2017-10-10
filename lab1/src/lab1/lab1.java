@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.imageio.*;
    
 
-import java.io.FileOutputStream; 
+import java.io.FileOutputStream;     //git ×¢ÊÍ
 
 public class lab1 extends JFrame{
 	private graph G=new graph();

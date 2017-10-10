@@ -76,7 +76,7 @@ public class word {
 		return linkList.indexOf(edgeName);
 	}
 	
-	public int getColor(String name)
+	public int getColor(String name)    //再次继续添加一个git测试的注释
 	{
 		int i;
 		int rt=0;

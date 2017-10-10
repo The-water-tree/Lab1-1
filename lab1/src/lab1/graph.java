@@ -2,7 +2,7 @@ package lab1;
 import java.util.*;
 
 public class graph {
-	private Vector<word> wordList;
+	private Vector<word> wordList;//图的基本属性(新添加的git测试用注释）
 	
 	public graph(){
 		wordList=new Vector<word>();
