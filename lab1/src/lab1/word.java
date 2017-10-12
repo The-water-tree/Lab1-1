@@ -25,7 +25,7 @@ public class word {
 	}
 	public int getWeight(int index){
 		return weight.get(index);
-	}
+	}    //B2 branch update
 	
 	
 	

@@ -23,7 +23,7 @@ public class graph {
 				break;
 			}
 		}
-		return rt;
+		return rt;  //B2 branch update
 	}
 	
 	public void createGraph(String firstWord, String secondWord){
