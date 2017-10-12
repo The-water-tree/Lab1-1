@@ -1,5 +1,5 @@
 package lab1;
-import java.util.*;
+import java.util.*;  //C4 branch:the first change
 
 public class graph {
 	private Vector<word> wordList;//图的基本属性(新添加的git测试用注释）

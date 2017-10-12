@@ -2,7 +2,7 @@ package lab1;
 import java.util.*;
 import java.io.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.*;    //C4 branch: the first change
 import javax.swing.*;
 import javax.imageio.*;
    
