@@ -138,7 +138,7 @@ public class lab1 extends JFrame{
 		for(int count=0; count<functionItems.length;count++){
 			functionItems[count]=new JMenuItem(functionNames[count]);
 			functionMenu.add(functionItems[count]);
-		}
+		}   //B2 branch update
 		
 		
 		
