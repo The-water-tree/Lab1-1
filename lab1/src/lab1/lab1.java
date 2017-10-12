@@ -39,7 +39,7 @@ public class lab1 extends JFrame{
 			string1=textField1.getText();
 			string2=textField2.getText();
 			textField3.setText(queryBridgeWords(G, string1, string2));
-			string1=textField1.getText();
+			string1=textField1.getText();    //B1 branch:the first update
 		}
 	}
 	  

@@ -24,7 +24,7 @@ public class word {
 		return linkList.get(index);
 	}
 	public int getWeight(int index){
-		return weight.get(index);
+		return weight.get(index);    //B1 branch : the first update
 	}
 	
 	

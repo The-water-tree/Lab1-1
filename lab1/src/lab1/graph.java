@@ -5,7 +5,7 @@ public class graph {
 	private Vector<word> wordList;//图的基本属性(新添加的git测试用注释）
 	
 	public graph(){
-		wordList=new Vector<word>();
+		wordList=new Vector<word>();    //B1 branch:the first update
 	}		
 	
 	public Vector<word> getWordList(){//返回图中所有节点的集合
