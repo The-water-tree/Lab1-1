@@ -1,4 +1,5 @@
 package lab1;
+<<<<<<< HEAD
 import java.util.*;
 
 public class graph {
@@ -6,6 +7,15 @@ public class graph {
 	
 	public graph(){
 		wordList=new Vector<word>();
+=======
+import java.util.*;  //C4 branch:the first change
+
+public class graph {
+	private Vector<word> wordList;//图的基本属性(新添加的git测试用注释）
+	
+	public graph(){
+		wordList=new Vector<word>();    //B1 branch:the first update
+>>>>>>> origin/1150310504
 	}		
 	
 	public Vector<word> getWordList(){//返回图中所有节点的集合
@@ -23,7 +33,11 @@ public class graph {
 				break;
 			}
 		}
+<<<<<<< HEAD
 		return rt;
+=======
+		return rt;  //B2 branch update
+>>>>>>> origin/1150310504
 	}
 	
 	public void createGraph(String firstWord, String secondWord){

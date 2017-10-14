@@ -2,12 +2,20 @@ package lab1;
 import java.util.*;
 import java.io.*;
 import java.awt.*;
+<<<<<<< HEAD
 import java.awt.event.*;
+=======
+import java.awt.event.*;    //C4 branch: the first change
+>>>>>>> origin/1150310504
 import javax.swing.*;
 import javax.imageio.*;
    
 
+<<<<<<< HEAD
 import java.io.FileOutputStream; 
+=======
+import java.io.FileOutputStream;     //git ×¢ÊÍ
+>>>>>>> origin/1150310504
 
 public class lab1 extends JFrame{
 	private graph G=new graph();
@@ -39,7 +47,11 @@ public class lab1 extends JFrame{
 			string1=textField1.getText();
 			string2=textField2.getText();
 			textField3.setText(queryBridgeWords(G, string1, string2));
+<<<<<<< HEAD
 			string1=textField1.getText();
+=======
+			string1=textField1.getText();    //B1 branch:the first update
+>>>>>>> origin/1150310504
 		}
 	}
 	  
@@ -138,7 +150,11 @@ public class lab1 extends JFrame{
 		for(int count=0; count<functionItems.length;count++){
 			functionItems[count]=new JMenuItem(functionNames[count]);
 			functionMenu.add(functionItems[count]);
+<<<<<<< HEAD
 		}
+=======
+		}   //B2 branch update
+>>>>>>> origin/1150310504
 		
 		
 		

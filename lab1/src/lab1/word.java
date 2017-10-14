@@ -1,6 +1,6 @@
 package lab1;
 import java.util.*;
-import java.io.*;
+
 
 public class word {
 	private String wordName;
@@ -24,7 +24,9 @@ public class word {
 		return linkList.get(index);
 	}
 	public int getWeight(int index){
+
 		return weight.get(index);
+
 	}
 	
 	
@@ -76,7 +78,9 @@ public class word {
 		return linkList.indexOf(edgeName);
 	}
 	
-	public int getColor(String name)
+
+	public int getColor(String name)    //再次继续添加一个git测试的注释
+
 	{
 		int i;
 		int rt=0;
