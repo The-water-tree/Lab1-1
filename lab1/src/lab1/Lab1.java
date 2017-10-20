@@ -400,8 +400,8 @@ public class Lab1 extends JFrame {
         }
     }
 
+    static final int maxNum = 100000;
     public String randomWalk(Graph G) { // Ëæ»úÓÎ×ß
-        final int maxNum = 100000;  
 
         int[][] graphMatrix = G.getMatrix();  
 
