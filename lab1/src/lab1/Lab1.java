@@ -10,7 +10,7 @@ import javax.imageio.*;
 import java.io.FileOutputStream;  
 
 public class Lab1 extends JFrame {
-    private Graph G = new Graph();  
+    public Graph G = new Graph();  
     JLabel label1, label2;  
     JTextArea textArea1;  
     JTextField textField1, textField2, textField3;  
@@ -342,7 +342,7 @@ public class Lab1 extends JFrame {
             {
                 stringBuffer = s.split(" ");  
                 for (int i = 0;   i < stringBuffer.length;   i++) {
-                    stringBuffer[i] = stringBuffer[i].toLowerCase();  
+                    stringBuffer[i] = stringBuffer[i].toLowerCase(Locale.US);  
                     if (stringBuffer[i].charAt(0) <= 122 && stringBuffer[i].charAt(0) >= 97) {
                         int lastIndex = stringBuffer[i].length() - 1;  
                         if (stringBuffer[i].charAt(lastIndex) <= 122 && stringBuffer[i].charAt(lastIndex) >= 97)
