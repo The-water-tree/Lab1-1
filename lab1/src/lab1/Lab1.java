@@ -9,7 +9,7 @@ import javax.imageio.*;
 
 import java.io.FileOutputStream;  
 
-public class lab1 extends JFrame {
+public class Lab1 extends JFrame {
     private Graph G = new Graph();  
     JLabel label1, label2;  
     JTextArea textArea1;  
@@ -21,7 +21,7 @@ public class lab1 extends JFrame {
 
     public static void main(String args[]) {
 
-        lab1 application = new lab1();  
+        Lab1 application = new Lab1();  
         application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         /*
          * String filename="file1.txt";   lab1 test=new lab1();   graph
@@ -86,7 +86,7 @@ public class lab1 extends JFrame {
     }
 
     // GUI
-    public lab1() {
+    public Lab1() {
 
         super("实验1");  
 
@@ -379,9 +379,9 @@ public class lab1 extends JFrame {
             s = G.getCommand();  
             byte b[] = s.getBytes();  
             fos.write(b);  
-            fos.close();  
+            fos.close();
 
-            String path = "dot - Tjpg C:\\Users\\majunhua123\\workspace\\lab1\\file3.gv - o C:\\Users\\majunhua123\\workspace\\lab1\\file4.jpg ";   // 调用命令行
+            String path = "dot -Tjpg \"" + System.getProperty("user.dir") + "\\file3.gv\" -o \"" + System.getProperty("user.dir") + "\\file4.jpg\" ";   // 调用命令行
 
             Runtime run = Runtime.getRuntime();  
             try {
