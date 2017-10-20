@@ -7,14 +7,14 @@ import java.awt.event.*;
 import javax.swing.*;  
 import javax.imageio.*;  
 
-import java.io.FileOutputStream;  
+
 
 public class Lab1 extends JFrame {
     public Graph G = new Graph();  
     JLabel label1, label2;  
     JTextArea textArea1;  
     JTextField textField1, textField2, textField3;  
-    Box Vertical1, Horizontal1;  
+    Box vertical1, horizontal1;  
     JButton button1;  
     Container c = getContentPane();  
     JScrollPane JS, JS1;  
@@ -94,8 +94,8 @@ public class Lab1 extends JFrame {
 
         JMenuBar bar = new JMenuBar();  
         setJMenuBar(bar);  
-        Vertical1 = Box.createVerticalBox();  
-        Horizontal1 = Box.createHorizontalBox();  
+        vertical1 = Box.createVerticalBox();  
+        horizontal1 = Box.createHorizontalBox();  
 
         // 创建菜单File
 
@@ -132,8 +132,8 @@ public class Lab1 extends JFrame {
         functionItems[0].addActionListener( // 展示有向图
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        Vertical1.removeAll();  
-                        Horizontal1.removeAll();  
+                        vertical1.removeAll();  
+                        horizontal1.removeAll();  
                         showDirectedGraph(G);  
 
                         Icon bug = new ImageIcon("file4.jpg");  
@@ -143,8 +143,8 @@ public class Lab1 extends JFrame {
                         label1.setVerticalTextPosition(SwingConstants.BOTTOM);  
                         JScrollPane JS = new JScrollPane(label1);  
 
-                        Vertical1.add(JS);  
-                        c.add(Vertical1);  
+                        vertical1.add(JS);  
+                        c.add(vertical1);  
 
                         setVisible(true);  
                     }
@@ -153,8 +153,8 @@ public class Lab1 extends JFrame {
         functionItems[1].addActionListener( // 查询桥接词
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
-                        Vertical1.removeAll();  
-                        Horizontal1.removeAll();  
+                        vertical1.removeAll();  
+                        horizontal1.removeAll();  
 
                         showDirectedGraph(G);  
 
@@ -163,24 +163,24 @@ public class Lab1 extends JFrame {
                         label1.setHorizontalTextPosition(SwingConstants.CENTER);  
                         label1.setVerticalTextPosition(SwingConstants.BOTTOM);  
                         JScrollPane JS = new JScrollPane(label1);  
-                        Vertical1.add(JS);  
+                        vertical1.add(JS);  
 
                         textField3 = new JTextField("结果", 10);  
                         label2 = new JLabel("查询桥接词:", SwingConstants.CENTER);  
                         label2.setFont(new Font("黑体", Font.PLAIN, 20));  
-                        Vertical1.add(label2);  
-                        Horizontal1 = Box.createHorizontalBox();  
+                        vertical1.add(label2);  
+                        horizontal1 = Box.createHorizontalBox();  
                         textField1 = new JTextField("请输入第一个单词", 10);  
-                        Horizontal1.add(textField1);  
+                        horizontal1.add(textField1);  
                         textField2 = new JTextField("请输入第二个单词", 10);  
-                        Horizontal1.add(textField2);  
+                        horizontal1.add(textField2);  
                         button1 = new JButton("查询");  
-                        Horizontal1.add(button1);  
+                        horizontal1.add(button1);  
                         ButtonHandler1 handler = new ButtonHandler1();  
                         button1.addActionListener(handler);  
 
-                        Vertical1.add(Horizontal1);  
-                        Vertical1.add(textField3);  
+                        vertical1.add(horizontal1);  
+                        vertical1.add(textField3);  
                         setVisible(true);  
                     }
                 });  
@@ -189,8 +189,8 @@ public class Lab1 extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
 
-                        Horizontal1.removeAll();  
-                        Vertical1.removeAll();  
+                        horizontal1.removeAll();  
+                        vertical1.removeAll();  
 
                         showDirectedGraph(G);  
                         Icon bug = new ImageIcon("file4.jpg");  
@@ -198,23 +198,23 @@ public class Lab1 extends JFrame {
                         label1.setHorizontalTextPosition(SwingConstants.CENTER);  
                         label1.setVerticalTextPosition(SwingConstants.BOTTOM);  
                         JScrollPane JS = new JScrollPane(label1);  
-                        Vertical1.add(JS);  
+                        vertical1.add(JS);  
 
                         textField3 = new JTextField("结果", 10);  
                         label2 = new JLabel("输入文本:", SwingConstants.CENTER);  
                         label2.setFont(new Font("黑体", Font.PLAIN, 20));  
-                        Vertical1.add(label2);  
-                        Horizontal1 = Box.createHorizontalBox();  
+                        vertical1.add(label2);  
+                        horizontal1 = Box.createHorizontalBox();  
                         textField1 = new JTextField("请输入第一个单词", 10);  
-                        Horizontal1.add(textField1);  
+                        horizontal1.add(textField1);  
 
                         button1 = new JButton("添加桥接词");  
-                        Horizontal1.add(button1);  
+                        horizontal1.add(button1);  
                         ButtonHandler2 handler = new ButtonHandler2();  
                         button1.addActionListener(handler);  
 
-                        Vertical1.add(Horizontal1);  
-                        Vertical1.add(textField3);  
+                        vertical1.add(horizontal1);  
+                        vertical1.add(textField3);  
                         setVisible(true);  
                     }
                 });  
@@ -223,8 +223,8 @@ public class Lab1 extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
 
-                        Horizontal1.removeAll();  
-                        Vertical1.removeAll();  
+                        horizontal1.removeAll();  
+                        vertical1.removeAll();  
 
                         showDirectedGraph(G);  
                         Icon bug = new ImageIcon("file4.jpg");  
@@ -232,24 +232,24 @@ public class Lab1 extends JFrame {
                         label1.setHorizontalTextPosition(SwingConstants.CENTER);  
                         label1.setVerticalTextPosition(SwingConstants.BOTTOM);  
                         JScrollPane JS = new JScrollPane(label1);  
-                        Vertical1.add(JS);  
+                        vertical1.add(JS);  
 
                         textField3 = new JTextField("结果", 10);  
                         label2 = new JLabel("计算两个单词的最短路径", SwingConstants.CENTER);  
                         label2.setFont(new Font("黑体", Font.PLAIN, 20));  
-                        Vertical1.add(label2);  
-                        Horizontal1 = Box.createHorizontalBox();  
+                        vertical1.add(label2);  
+                        horizontal1 = Box.createHorizontalBox();  
                         textField1 = new JTextField("请输入第一个单词", 10);  
                         textField2 = new JTextField("请输入第二个单词", 10);  
-                        Horizontal1.add(textField1);  
-                        Horizontal1.add(textField2);  
+                        horizontal1.add(textField1);  
+                        horizontal1.add(textField2);  
                         button1 = new JButton("查询");  
-                        Horizontal1.add(button1);  
+                        horizontal1.add(button1);  
                         ButtonHandler3 handler = new ButtonHandler3();  
                         button1.addActionListener(handler);  
 
-                        Vertical1.add(Horizontal1);  
-                        Vertical1.add(textField3);  
+                        vertical1.add(horizontal1);  
+                        vertical1.add(textField3);  
                         setVisible(true);  
                     }
                 });  
@@ -258,8 +258,8 @@ public class Lab1 extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
 
-                        Horizontal1.removeAll();  
-                        Vertical1.removeAll();  
+                        horizontal1.removeAll();  
+                        vertical1.removeAll();  
                         Icon bug = new ImageIcon("file4.jpg");  
                         label1 = new JLabel("Directed Grapg", bug, SwingConstants.CENTER);  
                         label1.setHorizontalTextPosition(SwingConstants.CENTER);  
@@ -269,19 +269,19 @@ public class Lab1 extends JFrame {
                         label2 = new JLabel("一个单词到其他单词的最短路径", SwingConstants.CENTER);  
                         label2.setFont(new Font("黑体", Font.PLAIN, 20));  
 
-                        Horizontal1 = Box.createHorizontalBox();  
+                        horizontal1 = Box.createHorizontalBox();  
                         textField1 = new JTextField("请输入单词", 10);  
 
                         JScrollPane JS = new JScrollPane(label1);  
                         JScrollPane JS1 = new JScrollPane(textArea1);  
 
-                        Horizontal1.add(JS);  
-                        Horizontal1.add(JS1);  
-                        Vertical1.add(Horizontal1);  
-                        Vertical1.add(label2);  
-                        Vertical1.add(textField1);  
+                        horizontal1.add(JS);  
+                        horizontal1.add(JS1);  
+                        vertical1.add(horizontal1);  
+                        vertical1.add(label2);  
+                        vertical1.add(textField1);  
                         button1 = new JButton("查询");  
-                        Vertical1.add(button1);  
+                        vertical1.add(button1);  
                         ButtonHandler4 handler = new ButtonHandler4();  
                         button1.addActionListener(handler);  
 
@@ -293,8 +293,8 @@ public class Lab1 extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
 
-                        Vertical1.removeAll();  
-                        Horizontal1.removeAll();  
+                        vertical1.removeAll();  
+                        horizontal1.removeAll();  
 
                         Icon bug = new ImageIcon("file4.jpg");  
                         label1 = new JLabel("Directed Grapg", bug, SwingConstants.CENTER);  
@@ -304,17 +304,17 @@ public class Lab1 extends JFrame {
 
                         label2 = new JLabel("随机游走", SwingConstants.CENTER);  
                         label2.setFont(new Font("黑体", Font.PLAIN, 20));  
-                        Vertical1.add(JS);  
-                        Vertical1.add(label2);  
-                        Horizontal1 = Box.createHorizontalBox();  
+                        vertical1.add(JS);  
+                        vertical1.add(label2);  
+                        horizontal1 = Box.createHorizontalBox();  
 
                         button1 = new JButton("开始游走");  
-                        Horizontal1.add(button1);  
+                        horizontal1.add(button1);  
                         ButtonHandler5 handler = new ButtonHandler5();  
                         button1.addActionListener(handler);  
 
-                        Vertical1.add(Horizontal1);  
-                        Vertical1.add(textField3);  
+                        vertical1.add(horizontal1);  
+                        vertical1.add(textField3);  
 
                         setVisible(true);  
                     }
@@ -364,7 +364,7 @@ public class Lab1 extends JFrame {
             // System.out.print(buffer.elementAt(i).toString());  
             direcedGraph.createGraph(buffer.elementAt(i).toString(), buffer.elementAt(i + 1).toString());  
         }
-        if (buffer.size() > 0)
+        if (!buffer.isEmpty())
             direcedGraph.createGraph(buffer.elementAt(i).toString());  
         // direcedGraph.showGraph();  
         return direcedGraph;  
@@ -663,7 +663,7 @@ public class Lab1 extends JFrame {
                 } else if (wordList.get(G.getWordIndex(word1)).getColor(wordList.get(stack[0][t]).getname()) > 1) {
                     G.changeEdgeColor(G.getWordIndex(word1), stack[0][t], 1);  
                 }
-                buffer.append("- >");  
+                buffer.append("->");  
                 while (t != 0) {
                     buffer.append(wordList.get(stack[0][t]).getname());  
                     if (wordList.get(G.getWordIndex(wordList.get(stack[0][t]).getname()))
@@ -674,7 +674,7 @@ public class Lab1 extends JFrame {
                             .getColor(wordList.get(stack[0][t - 1]).getname()) > 1) {
                         G.changeEdgeColor(G.getWordIndex(wordList.get(stack[0][t]).getname()), stack[0][t - 1], 1);  
                     }
-                    buffer.append("- >");  
+                    buffer.append("->");  
                     t--;  
                 }
                 buffer.append(word2);  
