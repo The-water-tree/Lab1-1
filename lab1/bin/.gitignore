@@ -1,3 +1,4 @@
 /.classpath
 /.project
-/lab1/
+lab1/*
+*.class
