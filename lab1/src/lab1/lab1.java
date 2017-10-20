@@ -10,7 +10,7 @@ import javax.imageio.*;
 import java.io.FileOutputStream;  
 
 public class lab1 extends JFrame {
-    private graph G = new graph();  
+    private Graph G = new Graph();  
     JLabel label1, label2;  
     JTextArea textArea1;  
     JTextField textField1, textField2, textField3;  
@@ -53,7 +53,7 @@ public class lab1 extends JFrame {
     private class ButtonHandler3 implements ActionListener { // 最短路径
         public void actionPerformed(ActionEvent event) {
 
-            String string1, string2, string3;  
+            String string1, string2;  
             string1 = textField1.getText();  
             string2 = textField2.getText();  
             textField3.setText(calcShortestPath(G, string1, string2));  
@@ -327,8 +327,8 @@ public class lab1 extends JFrame {
 
     }
 
-    public graph createDirectedGraph(String filename) {// 建图
-        G = new graph();  
+    public Graph createDirectedGraph(String filename) {// 建图
+        G = new Graph();  
 
         Vector buffer = new Vector();   // 读取文件
         String[] stringBuffer = null;  
@@ -358,7 +358,7 @@ public class lab1 extends JFrame {
         } catch (IOException e) {
             System.out.println(e);  
         }
-        graph direcedGraph = new graph();  
+        Graph direcedGraph = new Graph();  
         int i;  
         for (i = 0;   i < buffer.size() - 1;   i++) {
             // System.out.print(buffer.elementAt(i).toString());  
@@ -370,7 +370,7 @@ public class lab1 extends JFrame {
         return direcedGraph;  
     }
     // 图形化展示有向图
-    void showDirectedGraph(graph G) { 
+    void showDirectedGraph(Graph G) { 
         try {
             File f1 = new File("file3.gv");  
             FileOutputStream fos = new FileOutputStream(f1);  
@@ -400,7 +400,7 @@ public class lab1 extends JFrame {
         }
     }
 
-    public String randomWalk(graph G) { // 随机游走
+    public String randomWalk(Graph G) { // 随机游走
         final int maxNum = 100000;  
 
         int[][] graphMatrix = G.getMatrix();  
@@ -468,9 +468,9 @@ public class lab1 extends JFrame {
         return randomPath;  
     }
 
-    public String queryBridgeWords(graph G, String word1, String word2) {// 查询桥接词
+    public String queryBridgeWords(Graph G, String word1, String word2) {// 查询桥接词
         Vector<String> bridgeWords = new Vector<String>();
-        word w1 = new word();  
+        Word w1 = new Word();  
         String result = new String();  
         int i;  
         if (G.queryExist(word1) && G.queryExist(word2)) {
@@ -492,7 +492,7 @@ public class lab1 extends JFrame {
 
     }
 
-    public String generateNewText(graph G, String inputText) {// 根据bridge word生成新文本
+    public String generateNewText(Graph G, String inputText) {// 根据bridge word生成新文本
         Vector<String> input = new Vector<String>();  
         int i = 0;  
         String[] temp0;  
@@ -504,7 +504,7 @@ public class lab1 extends JFrame {
         Random rand = new Random(25);  
         int ran;   // 随机选词插入
         int inputSize = input.size();  
-        word formerWord = new word();  
+        Word formerWord = new Word();  
         StringBuffer buffer = new StringBuffer();  
         String laterWord, output;  
         Vector<String> temp = new Vector<String>();  
@@ -556,7 +556,7 @@ public class lab1 extends JFrame {
         return x;  
     }
 
-    public String singleSource(graph G, String sourceWord) {// 单源到其他所有单词的最短路径
+    public String singleSource(Graph G, String sourceWord) {// 单源到其他所有单词的最短路径
         StringBuffer buffer = new StringBuffer();  
         String temp;  
         int i;  
@@ -577,9 +577,9 @@ public class lab1 extends JFrame {
         return temp;  
     }
 
-    public String calcShortestPath(graph G, String word1, String word2) {// 计算两个单词之间的最短路径
+    public String calcShortestPath(Graph G, String word1, String word2) {// 计算两个单词之间的最短路径
         final int maxNum = 100000;  
-        Vector<word> wordList = new Vector<word>();  
+        Vector<Word> wordList = new Vector<Word>();  
         wordList = G.getWordList();  
         int i, j, sum;  
         int indexSource, indexTail, indexMin;  

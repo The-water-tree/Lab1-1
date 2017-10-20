@@ -1,18 +1,17 @@
 package lab1;
 
 import java.util.*;
-import java.io.*;
 
-public class word {
+public class Word {
     private String wordName;
     private Vector<String> linkList; // 相邻边集合
     private Vector<Integer> weight; // 边的权重
     private Vector<Integer> color;
 
-    public word() {
+    public Word() {
     }
 
-    public word(String name) {  
+    public Word(String name) {  
         wordName = new String();
         wordName = name;
         linkList = new Vector<String>();
@@ -116,10 +115,10 @@ public class word {
         return index;
     }
 
-    public Vector<String> findBridgeWords(graph G, String word2) {// 找到当前对象与word2桥接的词
+    public Vector<String> findBridgeWords(Graph G, String word2) {// 找到当前对象与word2桥接的词
         Vector<String> bridgeWords = new Vector<String>();
         String tempWord;
-        word temp;
+        Word temp;
         int i, j;
         for (i = 0; i < this.linkList.size(); i++) {
             tempWord = linkList.elementAt(i);

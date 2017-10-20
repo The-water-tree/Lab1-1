@@ -2,14 +2,14 @@ package lab1;
 
 import java.util.*;
 
-public class graph {
-    private Vector<word> wordList;
+public class Graph {
+    private Vector<Word> wordList;
 
-    public graph() {
-        wordList = new Vector<word>();
+    public Graph() {
+        wordList = new Vector<Word>();
     }
 
-    public Vector<word> getWordList() {// 返回图中所有节点的集合
+    public Vector<Word> getWordList() {// 返回图中所有节点的集合
         return wordList;
     }
 
@@ -39,7 +39,7 @@ public class graph {
             wordList.elementAt(i).searchLink(secondWord);
         } // 判断图的边是否出现过
         else { // 新单词
-            word newWord = new word(firstWord);
+            Word newWord = new Word(firstWord);
             wordList.addElement(newWord);
             newWord.addLinkList(secondWord);
         }
@@ -58,7 +58,7 @@ public class graph {
         {
 //            ; // 判断图的边是否出现过
 //        else { // 新单词
-            word newWorld = new word(lastWord);
+            Word newWorld = new Word(lastWord);
             wordList.addElement(newWorld);
         }
     }
@@ -106,7 +106,7 @@ public class graph {
     }
 
     public void changeEdgeColor(int orderedNum, int edgeNum, int colorNum) {
-        word changedWord = wordList.get(orderedNum); // 确定更改颜色的单词
+        Word changedWord = wordList.get(orderedNum); // 确定更改颜色的单词
         int edgeIndex = changedWord.indexOfEdge(wordList.get(edgeNum).getname());
         changedWord.changecolor(edgeIndex, colorNum);
     }
@@ -131,9 +131,9 @@ public class graph {
         return false;
     }
 
-    public word findWord(String wd) {// 返回一个单词所在的节点word对象
+    public Word findWord(String wd) {// 返回一个单词所在的节点word对象
         int loopvariable;
-        word temp = new word();
+        Word temp = new Word();
         for (loopvariable = 0; loopvariable < this.wordList.size(); loopvariable++) {
             temp = this.wordList.get(loopvariable);
             if (temp.getname().equalsIgnoreCase(wd))
