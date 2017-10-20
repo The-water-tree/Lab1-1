@@ -701,7 +701,7 @@ public class Lab1 extends JFrame {
             }
             output = buffer.toString();  
 
-            if (repaint || !repaint) {
+            if (repaint) {
                 showDirectedGraph(G);
 
                 String path = "file4.jpg";  
