@@ -556,25 +556,31 @@ public class Lab1 extends JFrame {
         return x;  
     }
 
+    boolean repaint = true;
     public String singleSource(Graph G, String sourceWord) {// 单源到其他所有单词的最短路径
         StringBuffer buffer = new StringBuffer();  
         String temp;  
         int i;  
+        repaint = false;
         for (i = 0;   i < G.getWordList().size();   i++) {
             buffer.append(sourceWord);  
             buffer.append("到");  
             buffer.append(G.getWordList().get(i).getname());  
-            buffer.append("的最短路径：\n");  
+            buffer.append("的最短路径：\n");
             if (G.queryExist(sourceWord) == false) {
+                repaint = true;
                 return "can't find " + sourceWord + " in the graph!";  
             }
 
+            if (i + 1 == G.getWordList().size())
+                repaint = true;
             temp = calcShortestPath(G, sourceWord, G.getWordList().get(i).getname());  
 
             buffer.append(temp);  
         }
+        repaint = true;
         temp = buffer.toString();  
-        return temp;  
+        return temp;
     }
 
     public String calcShortestPath(Graph G, String word1, String word2) {// 计算两个单词之间的最短路径
@@ -695,16 +701,18 @@ public class Lab1 extends JFrame {
             }
             output = buffer.toString();  
 
-            showDirectedGraph(G);  
+            if (repaint || !repaint) {
+                showDirectedGraph(G);
 
-            String path = "file4.jpg";  
-
-            Icon icon;  
-            try {
-                icon = new ImageIcon(ImageIO.read(new File(path)));  
-                label1.setIcon(icon);  
-            } catch (IOException e) {
-                e.printStackTrace();  
+                String path = "file4.jpg";  
+    
+                Icon icon;  
+                try {
+                    icon = new ImageIcon(ImageIO.read(new File(path)));  
+                    label1.setIcon(icon);  
+                } catch (IOException e) {
+                    e.printStackTrace();  
+                }
             }
 
             G.colorClean();  
