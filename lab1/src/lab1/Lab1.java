@@ -477,16 +477,16 @@ public class Lab1 extends JFrame {
             w1 = G.findWord(word1);  
             bridgeWords = w1.findBridgeWords(G, word2);  
             if (bridgeWords.size() == 0) {
-                result = "No bridge words from word1 to word2!";  
+                result = "No bridge words from \"" + word1 + "\" to \"" + word2+ "\"!";  
             } else {
-                result = "The bridge words from " + word1 + " to " + word2 + " are: ";  
+                result = "The bridge words from \"" + word1 + "\" to \"" + word2 + "\" are: ";  
                 for (i = 0;   i < bridgeWords.size();   i++) {
                     result += bridgeWords.get(i) + " ";  
                 }
-                result += "\n";  
+          
             }
         } else {
-            result = "No word1 or word2 in the graph!";  
+            result = "No \""+word1+"\" or \""+word2+"\" in the graph!";  
         }
         return result;  
 
